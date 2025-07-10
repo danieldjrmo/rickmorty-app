@@ -1,22 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, FlatList, SafeAreaView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { getPersonajes } from './rickyMorty'
 import { Logo } from './components/Logo'
-import { CharacterCard } from './components/CharacterCard';
+import { Main } from './components/Main';
 
 
 export default function App() {
-  const [personajes, setPersonajes] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getPersonajes();
-      setPersonajes(data);
-    };
-
-    fetchData();
-  }, []);
+ 
 
   return (
     <ScrollView style={styles.container}>
@@ -24,9 +14,7 @@ export default function App() {
         <Logo ></Logo>
       </View>
       <Text style={styles.title}>Personajes de Rick and Morty</Text>
-      {personajes.map((personaje) => (
-        <CharacterCard key={personaje.id} character={personaje}/>
-      ))}
+      <Main />
 
       <StatusBar style="auto" />
     </ScrollView>
