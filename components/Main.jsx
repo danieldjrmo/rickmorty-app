@@ -9,6 +9,7 @@ export function Main() {
 
     const [personajes, setPersonajes] = useState([]);
 
+
     useEffect(() => {
         const fetchData = async () => {
             const data = await getPersonajes();
@@ -23,6 +24,9 @@ export function Main() {
         return (<ActivityIndicator size={32}></ActivityIndicator>)
     }
 
+  
+    
+
     return (
         <>
             {/* {personajes.map((personaje) => (
@@ -30,6 +34,7 @@ export function Main() {
             ))} */}
 
             <SafeAreaView>
+
                 <FlatList data={personajes}
                     renderItem={({ item }) => (<CharacterCard key={item.id} character={item} />)}
                     keyExtractor={(item) => item.id.toString()} />
