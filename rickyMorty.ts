@@ -15,4 +15,22 @@ export const getPersonajes = async () => {
 
 };
 
-getPersonajes(); // Llamada a la función
+
+export const getEpisodioDetail = async (episodioId) => {
+
+        const CHARACTERS=`https://rickandmortyapi.com/api/episode/${episodioId}`
+        const response = await fetch(`${CHARACTERS}`);
+        const json = await response.json();
+        const { results } = json;
+
+
+            const {id, name, air_date,episode}= json;
+
+            return {
+                id, name, air_date,episode
+            }
+    
+
+};
+
+

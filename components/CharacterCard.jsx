@@ -1,17 +1,25 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
+import { useRouter } from 'expo-router';
 
 export function CharacterCard({ character }) {
+const router = useRouter();
+
+  const irEpisodio = () => {
+    router.push(`../episodio/${character.id}`)
+  }
 
 
+  return (
 
-    return (
-        <View key={character.id} style={styles.card}>
-            <Image source={{ uri: character.image }} style={styles.image} />
-            <Text style={styles.name}>{character.name}</Text>
-            <Text>Status: {character.status}</Text>
-            <Text>Species: {character.species}</Text>
-        </View>
-    )
+    <Pressable key={character.id} style={styles.card} onPress={() => irEpisodio()}>
+
+      <Image source={{ uri: character.image }} style={styles.image} />
+      <Text style={styles.name}>{character.name}</Text>
+      <Text>Status: {character.status}</Text>
+      <Text>Species: {character.species}</Text>
+
+    </Pressable>
+  )
 }
 
 const styles = StyleSheet.create({
