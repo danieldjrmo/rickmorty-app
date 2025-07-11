@@ -16,9 +16,9 @@ export default function Layout() {
     />
 
     <Stack.Screen
-      name='contact'
+      name='about'
       options={{
-        title: 'Contacto'
+        title: 'About'
       }}
     />
   </Stack>

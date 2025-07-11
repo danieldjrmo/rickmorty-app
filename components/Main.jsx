@@ -33,7 +33,7 @@ export function Main() {
                 <CharacterCard key={personaje.id} character={personaje} />
             ))} */}
 
-            <SafeAreaView>
+            <SafeAreaView style={{flex:1}}>
 
                 <FlatList data={personajes}
                     renderItem={({ item }) => (<CharacterCard key={item.id} character={item} />)}
