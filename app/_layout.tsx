@@ -9,17 +9,25 @@ export default function Layout() {
     <Stack.Screen
       name='(home)/index'
       options={{
-       // title: 'Home',
-        headerShown:false,
-        headerShadowVisible:false
+        // title: 'Home',
+        headerShown: false,
+        headerShadowVisible: false
       }}
     />
 
     <Stack.Screen
-      name='about'
+      name='about/index'
       options={{
         title: 'About'
       }}
     />
+
+    <Stack.Screen
+      name='episodio/[id]'
+      options={{
+        title: 'Episodio'
+      }}
+    />
+
   </Stack>
 }
